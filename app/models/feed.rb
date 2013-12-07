@@ -25,10 +25,11 @@ class Feed < ActiveRecord::Base
     begin
       feed_data = SimpleRSS.parse(open(url))
       self.title = feed_data.title
-      save!
-
+      puts "-----------------------------"
+      puts feed_data
       existing_entry_guids = Entry.pluck(:guid).sort
       feed_data.entries.each do |entry_data|
+        puts entry_data
         unless existing_entry_guids.include?(entry_data.guid)
           Entry.create_from_json!(entry_data, self)
         end

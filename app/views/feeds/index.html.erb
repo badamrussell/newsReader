@@ -1,8 +1,18 @@
-<h1>Hello World</h1>
+<h1>News Reader</h1>
 <div id='content'>
 
 </div>
 
-<script>
+<script type="text/json" id="bootstrap">
+  { "feeds": <%= @feeds.to_json(include: :entries )%> }
+</script>
 
+<script type="text/javascript">
+  $(function () {
+    var div = $('<div></div>');
+    div.html($('#bootstrap').text());
+    var data = JSON.parse(div.text());
+
+    NewReader.initialize(data);
+  });
 </script>

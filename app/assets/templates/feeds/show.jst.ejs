@@ -1,0 +1,10 @@
+<h1><%= feed.escape('title') %></h1>
+
+<button class="refresh_feed" data-id="<%= feed.get('id') %>">Refresh</button>
+
+<ul>
+<% feed.entries.each(function(entry) { %>
+  <li><a href="<%= entry.escape('link') %>"><%= entry.escape('title') %></li>
+<% }); %>
+</ul>
+

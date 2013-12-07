@@ -11,7 +11,9 @@
 urls = [
   'http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
   'http://feeds.wired.com/wired/index',
-  'http://www.npr.org/rss/rss.php?id=1001'
+  'http://www.npr.org/rss/rss.php?id=1001',
+  'http://www.craigslist.org/about/best/all/index.rss',
+  'http://rss.cnn.com/rss/cnn_topstories.rss'
 ]
 
 urls.each do |url|
